@@ -1,5 +1,7 @@
 import 'core-js/features/promise';
-const promises = [];
+import { polyfills } from '@searchspring/snap-preact';
+
+const promises = [polyfills];
 if (!('fetch' in window)) {
 	promises.push(import('whatwg-fetch'));
 }

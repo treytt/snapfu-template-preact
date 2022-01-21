@@ -13,6 +13,13 @@ module.exports = merge(common, {
 		chunkLoadingGlobal: `${branchName}BundleChunks`,
 	},
 	target: 'browserslist:modern',
+	plugins: [
+		// to disable code splitting, include the following:
+		// const webpack = require('webpack');
+		// new webpack.optimize.LimitChunkCountPlugin({
+		// 	maxChunks: 1,
+		// }),
+	],
 	module: {
 		rules: [
 			{

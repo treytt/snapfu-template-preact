@@ -18,7 +18,7 @@ import './commands';
 
 beforeEach(() => {
 	// ignore party uncaught exceptions
-	cy.on('uncaught:exception', (err, runnable) => false);
+	cy.on('uncaught:exception', (err, runnable) => err.stack.includes('https://localhost:3333/bundle.js'));
 
 	// make references to requests available
 	cy.intercept(/.*searchspring.io\/api\/search\/search/).as('search');

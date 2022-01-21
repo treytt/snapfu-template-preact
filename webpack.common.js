@@ -11,10 +11,6 @@ module.exports = {
 		new webpack.DefinePlugin({
 			BRANCHNAME: `"${branchName}"`,
 		}),
-		// to disable code splitting, include the following:
-		// new webpack.optimize.LimitChunkCountPlugin({
-		// 	maxChunks: 1,
-		// }),
 	],
 	module: {
 		rules: [

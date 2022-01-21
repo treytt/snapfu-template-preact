@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const path = require('path');
@@ -13,6 +14,12 @@ module.exports = merge(common, {
 		chunkLoadingGlobal: `${branchName}BundleChunks`,
 	},
 	target: 'browserslist:universal',
+	plugins: [
+		// single bundle for legacy browsers without document.currentScript
+		new webpack.optimize.LimitChunkCountPlugin({
+			maxChunks: 1,
+		}),
+	],
 	module: {
 		rules: [
 			{
