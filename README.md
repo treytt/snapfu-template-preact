@@ -1,4 +1,4 @@
-# {{snapfu.name}}
+# maorss
 
 Snap SDK packages and components built with Preact.
 
